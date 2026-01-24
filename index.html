@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Name</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">
+                    <svg width="50" height="50" viewBox="0 0 50 50">
+                        <circle cx="25" cy="25" r="23" fill="#4A9FD8"/>
+                        <ellipse cx="18" cy="20" rx="5" ry="7" fill="white"/>
+                        <ellipse cx="32" cy="20" rx="5" ry="7" fill="white"/>
+                        <circle cx="18" cy="20" r="3" fill="#333"/>
+                        <circle cx="32" cy="20" r="3" fill="#333"/>
+                        <ellipse cx="25" cy="28" rx="8" ry="5" fill="#FFA500"/>
+                        <path d="M 15 35 Q 25 40 35 35" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h1 class="service-name">Service Name</h1>
+            </div>
+            <p class="subtitle">데이터를 입력하고 결과를 확인하세요</p>
+        </header>
+
+        <!-- Slogan Section -->
+        <section class="slogan">
+            <p>더 쉽고 정확한 데이터 분석을 위한 서비스</p>
+        </section>
+
+        <!-- Usage Guide Section -->
+        <section class="usage-guide">
+            <h2>사용 안내</h2>
+            <ul>
+                <li>텍스트 입력, 업로드, 이미지 활용/업로드 등 하나를 선택하세요</li>
+                <li>PDF 문서는 업로드만 가능합니다</li>
+                <li>이미지는 카메라로 촬영하거나 파일을 선택할 수 있습니다</li>
+                <li>입력 완료 후 '제출하기' 버튼을 클릭하세요</li>
+            </ul>
+        </section>
+
+        <!-- Input Section -->
+        <section class="input-section">
+            <h3>입력</h3>
+
+            <!-- Tab Buttons -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="text">
+                    <span class="icon">📝</span> 텍스트
+                </button>
+                <button class="tab-btn" data-tab="image">
+                    <span class="icon">📷</span> 이미지
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content">
+                <!-- Text Input Tab -->
+                <div class="tab-pane active" id="text-tab">
+                    <div class="input-label">텍스트 입력</div>
+                    <textarea
+                        id="text-input"
+                        class="text-input"
+                        placeholder="여기에 텍스트를 입력하세요..."
+                        rows="8"
+                    ></textarea>
+                </div>
+
+                <!-- Image Input Tab -->
+                <div class="tab-pane" id="image-tab">
+                    <div class="input-label">이미지 입력</div>
+                    <div class="image-input-area">
+                        <input
+                            type="file"
+                            id="image-upload"
+                            accept="image/*"
+                            style="display: none;"
+                        >
+                        <div class="upload-placeholder" id="upload-placeholder">
+                            <span class="upload-icon">🖼️</span>
+                            <p>이미지를 업로드하거나 드래그하세요</p>
+                            <button type="button" class="upload-btn" id="select-image-btn">
+                                파일 선택
+                            </button>
+                        </div>
+                        <div class="image-preview" id="image-preview" style="display: none;">
+                            <img id="preview-img" src="" alt="Preview">
+                            <button type="button" class="remove-btn" id="remove-image-btn">
+                                ✕ 제거
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-section">
+                <button type="button" class="submit-btn" id="submit-btn" disabled>
+                    제출하기
+                </button>
+            </div>
+        </section>
+
+        <!-- Service Introduction -->
+        <footer class="service-intro">
+            <button class="intro-btn" id="intro-btn">서비스 소개 보기</button>
+        </footer>
+    </div>
+
+    <!-- Service Introduction Modal -->
+    <div class="modal" id="intro-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>서비스 소개</h2>
+            <p>이 서비스는 사용자가 텍스트나 이미지 데이터를 입력하면 분석 결과를 제공합니다.</p>
+            <ul>
+                <li>간편한 데이터 입력 방식 제공</li>
+                <li>다양한 형식 지원 (텍스트, 이미지)</li>
+                <li>빠르고 정확한 분석 결과</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
