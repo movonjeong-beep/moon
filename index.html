@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Name - 문서 업로드 서비스</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Header Section -->
+            <section class="header-section">
+                <div class="label-box">로고+서비스명</div>
+                <div class="header-content">
+                    <div class="logo-container">
+                        <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="45" fill="#4DB8E8"/>
+                            <ellipse cx="35" cy="40" rx="8" ry="12" fill="white"/>
+                            <ellipse cx="65" cy="40" rx="8" ry="12" fill="white"/>
+                            <circle cx="35" cy="40" r="4" fill="#1a1a1a"/>
+                            <circle cx="65" cy="40" r="4" fill="#1a1a1a"/>
+                            <path d="M 30 60 Q 50 70 70 60" stroke="#1a1a1a" stroke-width="3" fill="none"/>
+                            <ellipse cx="50" cy="30" rx="25" ry="15" fill="#3A9AC9"/>
+                        </svg>
+                        <div class="service-name">
+                            <span class="service-text">Service</span>
+                            <span class="service-text-blue">Name</span>
+                        </div>
+                    </div>
+                    <p class="service-subtitle">데이터를 입력하고 결과를 확인하세요</p>
+                </div>
+            </section>
+
+            <!-- Slogan Section -->
+            <section class="slogan-section">
+                <div class="label-box">슬로건(싱크빅 필요)</div>
+                <div class="slogan-content">
+                    <p class="slogan-text">사용 안내서는 조금 더 심고,<br>맨들도 통해내나 막히선 재시 /<br>서비스명 확정되면 작성</p>
+                </div>
+            </section>
+
+            <!-- Usage Guide Section -->
+            <section class="usage-section">
+                <div class="usage-box">
+                    <div class="usage-header">
+                        <span class="usage-icon">📝</span>
+                        <h3>사용 안내</h3>
+                    </div>
+                    <ul class="usage-list">
+                        <li><strong>• 텍스트 입력, PDF 업로드, 이미지 활용/업로드 중 하나를 선택하세요</strong></li>
+                        <li>• PDF 문서는 업로드만 가능합니다</li>
+                        <li>• 이미지는 카메라로 촬영하거나 파일을 선택할 수 있습니다</li>
+                        <li>• 입력 완료 후 '제출하기' 버튼을 클릭하세요</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="label-box small">텍스트 삭제<br>(버튼/입력장 안에 이미<br>설명이 있음)</div>
+                <div class="upload-content">
+                    <h3 class="upload-title">업력</h3>
+                    <div class="upload-tabs">
+                        <button class="tab-btn active" data-tab="text">
+                            <span class="tab-icon">📄</span>
+                            텍스트
+                        </button>
+                        <button class="tab-btn" data-tab="pdf">
+                            <span class="tab-icon">📑</span>
+                            PDF
+                        </button>
+                        <button class="tab-btn" data-tab="image">
+                            <span class="tab-icon">📷</span>
+                            이미지
+                        </button>
+                    </div>
+
+                    <!-- Text Input Tab -->
+                    <div class="tab-content active" id="text-tab">
+                        <div class="input-label">텍스트 입력</div>
+                        <textarea class="text-input" placeholder="여기에 텍스트를 입력하세요..."></textarea>
+                    </div>
+
+                    <!-- PDF Upload Tab -->
+                    <div class="tab-content" id="pdf-tab">
+                        <div class="upload-area">
+                            <input type="file" id="pdf-upload" accept=".pdf" hidden>
+                            <label for="pdf-upload" class="upload-label">
+                                <span class="upload-icon">📑</span>
+                                <p>PDF 파일을 선택하거나 드래그하세요</p>
+                                <span class="upload-hint">클릭하여 파일 선택</span>
+                            </label>
+                            <div class="file-name" id="pdf-file-name"></div>
+                        </div>
+                    </div>
+
+                    <!-- Image Upload Tab -->
+                    <div class="tab-content" id="image-tab">
+                        <div class="upload-area">
+                            <input type="file" id="image-upload" accept="image/*" hidden>
+                            <label for="image-upload" class="upload-label">
+                                <span class="upload-icon">📷</span>
+                                <p>이미지 파일을 선택하거나 드래그하세요</p>
+                                <span class="upload-hint">클릭하여 파일 선택</span>
+                            </label>
+                            <div class="file-name" id="image-file-name"></div>
+                            <div class="image-preview" id="image-preview"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Introduction Section -->
+            <section class="intro-section">
+                <div class="label-box">서비스 소개 추가<br>(최하단 제시 or 버튼)</div>
+                <div class="intro-content">
+                    <button class="intro-btn">서비스 소개 보기</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-box">
+                <h4>사용 안내 타이틀은 중앙 정렬,</h4>
+                <p>설명 부분은 불릿 포함한 너비의 좌우 여백이 동일하도록 제시</p>
+            </div>
+            <div class="sidebar-box">
+                <h4>pdf 입력은 제한 예정</h4>
+                <ul>
+                    <li>텍스트 입력/이미지 파일 입력 지원</li>
+                    <li>입력 데이터가 존재하지 않을 경우 제출버튼 비활성</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
